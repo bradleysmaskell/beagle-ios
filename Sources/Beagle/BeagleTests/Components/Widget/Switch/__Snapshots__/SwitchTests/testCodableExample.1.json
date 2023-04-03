@@ -1,0 +1,9 @@
+{
+  "_beagleComponent_" : "beagle:switch",
+  "enabled" : true,
+  "isOn" : false,
+  "onToggle" : [
+
+  ],
+  "tintColor" : "#1192CC"
+}

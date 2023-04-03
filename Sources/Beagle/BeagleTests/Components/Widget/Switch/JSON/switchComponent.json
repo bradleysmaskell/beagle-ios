@@ -1,0 +1,11 @@
+{
+  "style" : null,
+  "accessibility" : null,
+  "id" : null,
+  "tintColor" : "#1192CC",
+  "enabled" : true,
+  "onToggle" : [],
+  "_beagleComponent_" : "beagle:switch",
+  "isOn" : false
+}
+

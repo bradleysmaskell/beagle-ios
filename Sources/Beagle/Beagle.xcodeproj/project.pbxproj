@@ -259,7 +259,12 @@
 		A9C6F54E273D858B00576313 /* DependenciesContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C6F54D273D858900576313 /* DependenciesContainerTests.swift */; };
 		A9C6F550273D90FC00576313 /* InjectedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C6F54F273D90FC00576313 /* InjectedTests.swift */; };
 		A9C6F555273DB76200576313 /* Singletons.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C6F553273DB73C00576313 /* Singletons.swift */; };
+		B23978D729D5D27C00892C87 /* Switch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23978D629D5D27C00892C87 /* Switch.swift */; };
+		B23978D929D5D30400892C87 /* Switch+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23978D829D5D30400892C87 /* Switch+Extensions.swift */; };
 		B253523D29D1EB2000E492E8 /* CustomBeagleScreenViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B253523C29D1EB2000E492E8 /* CustomBeagleScreenViewControllerTests.swift */; };
+		B2BFA3A829DB4B7900619D96 /* SwitchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BFA3A729DB4B7900619D96 /* SwitchTests.swift */; };
+		B2BFA3AB29DB726B00619D96 /* switchComponent.json in Resources */ = {isa = PBXBuildFile; fileRef = B2BFA3AA29DB706100619D96 /* switchComponent.json */; };
+		B2BFA3AE29DB730700619D96 /* test_renderSwitchComponent.1.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BFA3AD29DB730700619D96 /* test_renderSwitchComponent.1.png */; };
 		B755B58A2686602700A7EDC5 /* GridViewDecodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B755B5892686602700A7EDC5 /* GridViewDecodeTests.swift */; };
 		B755B591268667D400A7EDC5 /* gridViewSpanCount.json in Resources */ = {isa = PBXBuildFile; fileRef = B755B590268667D400A7EDC5 /* gridViewSpanCount.json */; };
 		C0291889247D5BFA00C3AA13 /* ComponentFromJsonFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0291888247D5BFA00C3AA13 /* ComponentFromJsonFile.swift */; };
@@ -614,7 +619,12 @@
 		A9C6F54D273D858900576313 /* DependenciesContainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependenciesContainerTests.swift; sourceTree = "<group>"; };
 		A9C6F54F273D90FC00576313 /* InjectedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectedTests.swift; sourceTree = "<group>"; };
 		A9C6F553273DB73C00576313 /* Singletons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singletons.swift; sourceTree = "<group>"; };
+		B23978D629D5D27C00892C87 /* Switch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switch.swift; sourceTree = "<group>"; };
+		B23978D829D5D30400892C87 /* Switch+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Switch+Extensions.swift"; sourceTree = "<group>"; };
 		B253523C29D1EB2000E492E8 /* CustomBeagleScreenViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBeagleScreenViewControllerTests.swift; sourceTree = "<group>"; };
+		B2BFA3A729DB4B7900619D96 /* SwitchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTests.swift; sourceTree = "<group>"; };
+		B2BFA3AA29DB706100619D96 /* switchComponent.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = switchComponent.json; sourceTree = "<group>"; };
+		B2BFA3AD29DB730700619D96 /* test_renderSwitchComponent.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_renderSwitchComponent.1.png; sourceTree = "<group>"; };
 		B755B5892686602700A7EDC5 /* GridViewDecodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewDecodeTests.swift; sourceTree = "<group>"; };
 		B755B590268667D400A7EDC5 /* gridViewSpanCount.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = gridViewSpanCount.json; sourceTree = "<group>"; };
 		C0291888247D5BFA00C3AA13 /* ComponentFromJsonFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentFromJsonFile.swift; sourceTree = "<group>"; };
@@ -1232,6 +1242,7 @@
 		9356CCDA262482810021EFC6 /* Widget */ = {
 			isa = PBXGroup;
 			children = (
+				B2BFA3A629DB4B4E00619D96 /* Switch */,
 				9356CED626248B190021EFC6 /* __Snapshots__ */,
 				9356CCDB262482810021EFC6 /* WidgetTests.swift */,
 				5C5B91112649622B0005BD93 /* GridView */,
@@ -1533,6 +1544,7 @@
 		9398CA6C25532B520003A010 /* Widget */ = {
 			isa = PBXGroup;
 			children = (
+				B23978D529D5D25000892C87 /* Switch */,
 				C08D4E6A2485939900AAAC0A /* Button */,
 				C08D4DF524857AC300AAAC0A /* Container */,
 				5C5B90E5263891F30005BD93 /* GridView */,
@@ -1704,6 +1716,41 @@
 				A9C6F547273312BA00576313 /* BundleProtocol.swift */,
 			);
 			path = Bundle;
+			sourceTree = "<group>";
+		};
+		B23978D529D5D25000892C87 /* Switch */ = {
+			isa = PBXGroup;
+			children = (
+				B23978D629D5D27C00892C87 /* Switch.swift */,
+				B23978D829D5D30400892C87 /* Switch+Extensions.swift */,
+			);
+			path = Switch;
+			sourceTree = "<group>";
+		};
+		B2BFA3A629DB4B4E00619D96 /* Switch */ = {
+			isa = PBXGroup;
+			children = (
+				B2BFA3A929DB700C00619D96 /* JSON */,
+				B2BFA3A729DB4B7900619D96 /* SwitchTests.swift */,
+			);
+			path = Switch;
+			sourceTree = "<group>";
+		};
+		B2BFA3A929DB700C00619D96 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				B2BFA3AC29DB72C600619D96 /* __Snapshots__ */,
+				B2BFA3AA29DB706100619D96 /* switchComponent.json */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		B2BFA3AC29DB72C600619D96 /* __Snapshots__ */ = {
+			isa = PBXGroup;
+			children = (
+				B2BFA3AD29DB730700619D96 /* test_renderSwitchComponent.1.png */,
+			);
+			path = __Snapshots__;
 			sourceTree = "<group>";
 		};
 		B755B5882686600400A7EDC5 /* GridView */ = {
@@ -2150,6 +2197,7 @@
 				9356CE58262482820021EFC6 /* declarativeText2.json in Resources */,
 				9356CE1D262482820021EFC6 /* ImageTests.xcassets in Resources */,
 				9356CE36262482820021EFC6 /* TextComponent.json in Resources */,
+				B2BFA3AE29DB730700619D96 /* test_renderSwitchComponent.1.png in Resources */,
 				9356CBB8262481BE0021EFC6 /* pushViewWithAdditionalData.json in Resources */,
 				9356CE2C262482820021EFC6 /* buttonComponent.json in Resources */,
 				9356CD9A262482820021EFC6 /* Confirm-1.json in Resources */,
@@ -2162,6 +2210,7 @@
 				9356CD99262482820021EFC6 /* AddChildren-1.json in Resources */,
 				9356CE57262482820021EFC6 /* declarativeText1.json in Resources */,
 				93C12E1C28E4BE92008C051C /* listUsingIndex.json in Resources */,
+				B2BFA3AB29DB726B00619D96 /* switchComponent.json in Resources */,
 				9356CDDC262482820021EFC6 /* ScrollViewComponent.json in Resources */,
 				9356CDDD262482820021EFC6 /* HorizontalScrollView.json in Resources */,
 				9356CD9C262482820021EFC6 /* OpenNativeRoute-1.json in Resources */,
@@ -2299,6 +2348,7 @@
 				93D24A512513DF47005A5CBD /* AutoLayoutWrapper.swift in Sources */,
 				98B7D95623DB2722002622AC /* Observable.swift in Sources */,
 				A0D608DA2448DF8700F7D851 /* BeagleNavigationController.swift in Sources */,
+				B23978D929D5D30400892C87 /* Switch+Extensions.swift in Sources */,
 				9398CA7625532E1F0003A010 /* ListView.swift in Sources */,
 				93369CDF2681248000BBDB42 /* PullToRefresh+Extensions.swift in Sources */,
 				9398CAA8255338C00003A010 /* Style.swift in Sources */,
@@ -2327,6 +2377,7 @@
 				9398CA7D25532ECD0003A010 /* NavigationBar.swift in Sources */,
 				C08D4E2024857B5100AAAC0A /* Screen+Extensions.swift in Sources */,
 				9327116523F1C9D100778B56 /* Widget.swift in Sources */,
+				B23978D729D5D27C00892C87 /* Switch.swift in Sources */,
 				C08D4E2C24857BC200AAAC0A /* StyleViewConfigurator.swift in Sources */,
 				9398CB10255591310003A010 /* RepresentableByParsableString.swift in Sources */,
 				A0EB6BD825910FC8001A3E65 /* AnalyticsConfig.swift in Sources */,
@@ -2412,6 +2463,7 @@
 				9322336526CC23FC00CB95EF /* ActionSpy.swift in Sources */,
 				9356CE31262482820021EFC6 /* StyleViewConfiguratorTests.swift in Sources */,
 				9356CE43262482820021EFC6 /* UnitValueExtensionTests.swift in Sources */,
+				B2BFA3A829DB4B7900619D96 /* SwitchTests.swift in Sources */,
 				9356CD8F262482820021EFC6 /* BeagleLoggerTests.swift in Sources */,
 				A9C6F550273D90FC00576313 /* InjectedTests.swift in Sources */,
 				B253523D29D1EB2000E492E8 /* CustomBeagleScreenViewControllerTests.swift in Sources */,
