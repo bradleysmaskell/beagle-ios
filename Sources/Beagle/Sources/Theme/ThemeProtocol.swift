@@ -55,6 +55,20 @@ public struct BeagleStyle {
             $0?.textColor = color
         }
     }
+    
+    public static func uiSwitch(
+        onTintColor: UIColor? = nil,
+        thumbTintColor: UIColor? = nil,
+        onImage: UIImage? = nil,
+        offImage: UIImage? = nil
+    ) -> (UISwitch?) -> Void {
+        return {
+            $0?.onTintColor = onTintColor
+            $0?.thumbTintColor = thumbTintColor
+            $0?.onImage = onImage
+            $0?.offImage = offImage
+        }
+    }
 
     public static func label(withFont font: UIFont) -> (UILabel?) -> Void {
         return { $0?.font = font }

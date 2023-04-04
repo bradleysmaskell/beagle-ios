@@ -19,31 +19,28 @@ import UIKit
 
 extension Switch {
     public func toView(renderer: BeagleRenderer) -> UIView {
-        let sduiSwitch = BeagleUISwitch(
+        let uiSwitch = BeagleUISwitch(
             onToggle: onToggle,
             controller: renderer.controller
         )
         
-        renderer.observe(tintColor, andUpdateManyIn: sduiSwitch) {
-            if let tintColorString = $0, let tintColor = UIColor(hex: tintColorString) {
-                sduiSwitch.tintColor = tintColor
-                sduiSwitch.onTintColor = tintColor
-            }
-        }
-        
-        renderer.observe(isOn, andUpdateManyIn: sduiSwitch) {
+        renderer.observe(isOn, andUpdateManyIn: uiSwitch) {
             if let initialOnState = $0 {
-                sduiSwitch.setOn(initialOnState, animated: false)
+                uiSwitch.setOn(initialOnState, animated: false)
             }
         }
         
-        renderer.observe(enabled, andUpdateManyIn: sduiSwitch) {
+        renderer.observe(enabled, andUpdateManyIn: uiSwitch) {
             if let isEnabled = $0 {
-                sduiSwitch.isEnabled = isEnabled
+                uiSwitch.isEnabled = isEnabled
             }
         }
         
-        return sduiSwitch
+        if let styleId = styleId {
+            uiSwitch.styleId = styleId
+        }
+        
+        return uiSwitch
     }
     
     final class BeagleUISwitch: UISwitch {
@@ -91,6 +88,7 @@ extension Switch {
             guard let styleId = styleId else { return }
             beagle.applyStyle(for: self, styleId: styleId, with: controller)
         }
+        
     }
 
     

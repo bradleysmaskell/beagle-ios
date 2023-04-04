@@ -16,18 +16,50 @@
  */
 
 import XCTest
+import SnapshotTesting
 @testable import Beagle
 
-final class SwitchTests: XCTestCase {
+final class SwitchTests: EnvironmentTestCase {
     
     private let snapshotSize = CGSize(width: 150, height: 50)
+    private lazy var theme = AppTheme(
+        styles: [
+           "test.switch.style": switchStyle
+        ]
+    )
     
     private lazy var controller = BeagleControllerStub()
     private lazy var renderer = BeagleRenderer(controller: controller)
+    
+    private func switchStyle() -> (UISwitch?) -> Void {
+        BeagleStyle.uiSwitch(
+            onTintColor: .blue
+        )
+    }
 
     func testCodableExample() throws {
         let component: Switch = try componentFromJsonFile(fileName: "switchComponent")
         assertSnapshotJson(matching: component)
+    }
+    
+    func testApplySwitchStyle() {
+        // Given
+        let theme = ThemeSpy()
+        enviroment.theme = theme
+        
+        let style = "test.switch.style"
+        let uiSwitch = Switch(
+            isOn: .value(true),
+            styleId: style,
+            enabled: .value(true)
+        )
+
+        // When
+        let view = renderer.render(uiSwitch)
+
+        // Then
+        XCTAssertEqual(view, theme.styledView)
+        XCTAssertEqual(style, theme.styleApplied)
     }
     
     func testActionTriggered() {

@@ -23,10 +23,10 @@ public struct Switch: Widget {
     /// Whether the Switch is toggled on
     public var isOn: Expression<Bool>
     
-    /// The tint color of the Switch
-    public var tintColor: Expression<String>?
+    /// References a native style configured to be applied on this switch.
+    public var styleId: String?
     
-    /// Enables or disables the field.
+    /// Enables or disables the switch.
     public var enabled: Expression<Bool>
     
     /// Actions array that this field can trigger when its value is toggled.
